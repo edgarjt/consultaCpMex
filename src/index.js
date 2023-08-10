@@ -40,8 +40,6 @@ async function openWebPage(cp) {
     // Datos tabla
     await page.waitForSelector('#dgCP');
 
-    console.log(page);
-
     // Función para extraer los datos de la tabla y devolverlos en un array
     const tableData = await page.evaluate(() => {
         const data = [];
@@ -68,5 +66,6 @@ async function openWebPage(cp) {
     });
 
     if (browser) await browser.close();
+
     return tableData;
 }
